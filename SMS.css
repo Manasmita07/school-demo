@@ -1,0 +1,278 @@
+.text-color {
+    color: #ff8e29;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .text-color1 {
+    color: #ff8e29;
+    
+  }
+  .align-left{
+text-align: left;
+  }
+
+  .mr-20{
+    margin-right: 20rem;
+  }
+  .ml-20{
+    margin-left: 20rem;
+  }
+  .ml-5{
+    margin-left: 5rem;
+  }
+  
+  .fs-18 {
+    font-size: 18px;
+  }
+  .fs-22 {
+    font-size: 22px;
+  }
+  
+  .img-fluid {
+    width: 500px;
+  }
+  .bg-light-blue {
+    background-color: #e6f2ff;
+  }
+  
+  .navbar-nav {
+    margin-right: 30px;
+  }
+  
+  .nav-link {
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+    /* line-height: 5rem; */
+  }
+  .navbar-brand img {
+    height: auto;
+  }
+  
+  .hero-section {
+    /* background-color: #f8f9fa; */
+    padding: 20px 30px 20px 30px;
+    text-align: center;
+  }
+  
+  .content-section {
+    padding: 0;
+  }
+  
+  .img-adjust {
+    max-width: 100%;
+  
+    height: auto;
+    max-height: 400px;
+  }
+  
+  .text-large {
+    font-size: 1.5rem;
+  
+    line-height: 1.5;
+  }
+  
+  .endSign {
+    text-align: center;
+  }
+  
+  .headPara {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .attendance-record {
+    background-color: #7ab0db;
+    border-radius: 25px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    align-items: center;
+  }
+  
+  .attendance-record h5 {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  
+  .attendance-record p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+  }
+  
+  .bg-light-blue {
+    background-color: #e6f2ff;
+  }
+  
+  .bg-light-white {
+    background-color: white;
+  }
+  
+  .second {
+    margin-top: 30px;
+  }
+  
+  button {
+    border: none;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+
+  .manual {
+    /* background-color: #327ff1; */
+    border-radius: 25px;
+    /* padding: 15px; */
+    margin-bottom: 20px;
+    
+    text-align: left;
+    display: flex;
+    align-items: center;
+  }
+  
+  .manual h5 {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    white-space: nowrap;
+  }
+  .manual-h5:hover{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
+    transition: 0.3s ease;
+  }
+  
+  .manual p {
+    font-size: 0.9rem;
+    color: black;
+    margin: 0;
+  }
+
+  .bg-blue{
+    
+  }
+  
+  /* General Mobile Styles */
+  @media (max-width: 767px) {
+    .hero-section {
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .text-large {
+      font-size: 1.2rem;
+    }
+  
+    .img-fluid {
+      width: 100%;
+    }
+  
+    .navbar-nav {
+      margin-left: 3px;
+      display: flex;
+      /* justify-content: center; */
+      flex-direction: row;
+    }
+  
+    .nav-link {
+      font-size: 15px;
+    }
+  
+    .headPara {
+      font-size: 24px;
+    }
+  
+    .img-adjust {
+      max-height: 250px;
+    }
+  
+    .hero-section h1 {
+      font-size: 28px;
+    }
+  }
+  
+  /* Tablet and Small Desktop Styles */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .hero-section h1 {
+      font-size: 34px;
+    }
+  
+    .text-large {
+      font-size: 1.3rem;
+    }
+  
+    .navbar-nav {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+    }
+  
+    .img-fluid {
+      width: 70%;
+    }
+  
+    .img-adjust {
+      max-height: 350px;
+    }
+  
+    .headPara {
+      font-size: 26px;
+    }
+  }
+  
+  /* Large Desktop Styles */
+  @media (min-width: 1025px) {
+    .hero-section h1 {
+      font-size: 48px;
+    }
+  
+    .text-large {
+      font-size: 1.5rem;
+    }
+  
+    .img-fluid {
+      width: 500px;
+    }
+  
+    .img-adjust {
+      max-height: 400px;
+    }
+  
+    .headPara {
+      font-size: 30px;
+    }
+  
+    .nav-link {
+      font-size: 17px;
+    }
+  }
+  .tope {
+  margin-top: 10px;
+  text-align: center;
+  padding: 14px 320px 1px 289px;
+ 
+}
+
+.bg-blueC{
+    background-color: rgb(74 74 249);
+    color: white;
+}
+
+.social-icon {
+    margin: 0 10px;
+  }
+  
+  .social-icon img {
+    width: 60px;
+    height: 60px;
+  }

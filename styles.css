@@ -1,0 +1,62 @@
+.bg-image {
+  background-image: url("./AllImages/35.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  /* padding: 50px 0; */
+  /* background-attachment: fixed; */
+}
+
+.logo {
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  margin: 0 10px;
+}
+
+.social-icon img {
+  width: 60px;
+  height: 60px;
+}
+
+.card {
+  border-radius: 10px;
+  max-width: 250px; /* Smaller card size */
+  margin: 0 auto; /* Centers the card horizontally */
+}
+.card-body {
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* Ensures the image inside the card fits well */
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  max-width: 100%;
+  height: auto; /* Maintains the aspect ratio */
+}
+.web {
+  cursor: pointer;
+}
+.erp {
+  cursor: pointer;
+}
+.card-title {
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1.3rem;
+}
+
+.blue {
+  background-image: url("./AllImages/blue.png");
+  color: white;
+}
+.tope {
+  margin-top: 10px;
+  text-align: center;
+  padding: 14px 320px 1px 289px;
+  /* background-color: rgb(84, 84, 218); */
+}
