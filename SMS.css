@@ -4,6 +4,8 @@
   }
   .text-color1 {
     color: #ff8e29;
+    font-size: 20px;
+    margin-left: 80px;
     
   }
   .align-left{
@@ -277,3 +279,22 @@ text-align: left;
     height: 60px;
   }
 
+  .photo-frame {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.frame-container {
+    position: relative;
+}
+
+.frame-text {
+    position: absolute;
+    bottom: 10px; /* Adjust as necessary */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* Choose a color that contrasts the image */
+    padding: 5px;
+    font-size: 10px; /* Adjust text size */
+}
