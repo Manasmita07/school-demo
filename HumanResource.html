@@ -108,11 +108,9 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="inputState" class="form-control" name="client" >
+                                                            <select id="client_name" class="form-control" name="client_name" >
                                                                 <option value="" disabled selected>Client</option>
-                                                                <option value="1"  selected>Ram</option>
-                                                                <option value="2"  selected>Shyam</option>
-                                                                <option value="3"  selected>WWW</option>
+                                                                
                                                             
                                                             </select>
                                                             <span class="dropdown-icon" id="dropdownIcon"></span>
@@ -152,9 +150,9 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="inputState" class="form-control" name="client" >
+                                                            <select id="client_name_purchase" class="form-control" name="client_name" >
                                                                 <option value="" disabled selected>Client</option>
-                                                                <option value="1"  selected>Client</option>
+                                                                
                                                             
                                                             </select>
                                                             <span class="dropdown-icon" id="dropdownIcon"></span>
@@ -185,9 +183,9 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="inputState" class="form-control" name="client" >
+                                                            <select id="client_name_Enquiry" class="form-control" name="client_name" >
                                                                 <option value="" disabled selected>Client</option>
-                                                                <option value="1"  selected>Client</option>
+                                                                
                                                             
                                                             </select>
                                                             <span class="dropdown-icon" id="dropdownIcon"></span>
@@ -224,9 +222,9 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="inputState" class="form-control" name="client" >
+                                                            <select id="client_name_AMC" class="form-control" name="client_name" >
                                                                 <option value="" disabled selected>Client</option>
-                                                                <option value="1"  selected>Client</option>
+                                                               
                                                             
                                                             </select>
                                                             <span class="dropdown-icon" id="dropdownIcon"></span>
@@ -274,9 +272,9 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="inputState" class="form-control" name="client" >
+                                                            <select id="client_name_Other" class="form-control" name="client_name" >
                                                                 <option value="" disabled selected>Client</option>
-                                                                <option value="1"  selected>Client</option>
+                                                               
                                                             
                                                             </select>
                                                             <span class="dropdown-icon" id="dropdownIcon"></span>
@@ -309,9 +307,9 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="inputState" class="form-control" name="client" >
+                                                            <select id="client_name_Follow" class="form-control" name="client_name" >
                                                                 <option value="" disabled selected>Client</option>
-                                                                <option value="1"  selected>Client</option>
+                                                                
                                                             
                                                             </select>
                                                             <span class="dropdown-icon" id="dropdownIcon"></span>
@@ -338,9 +336,9 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="inputState" class="form-control" name="client" >
+                                                            <select id="client_name_Account" class="form-control" name="client_name" >
                                                                 <option value="" disabled selected>Client</option>
-                                                                <option value="1"  selected>Client</option>
+                                                               
                                                             
                                                             </select>
                                                             <span class="dropdown-icon" id="dropdownIcon"></span>
@@ -1065,7 +1063,7 @@
         data[key] = value;
     });
 
-    console.log("Form Data Submitted:", data); // Log form data
+    console.log("Form Data Submitted:", data); // Log form data to check if client_id is being sent
 
     fetch(apiUrl, {
         method: 'POST',
@@ -1095,6 +1093,245 @@
     }
 }
 
+// GET request: Fetch client names and populate the dropdown
+function fetchClients() {
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; 
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched:", data); // Log fetched client data
+        const clientDropdown = document.getElementById('client_name');
+
+        // Clear the current dropdown options
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+        // Populate the dropdown with fetched client names
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; // Set the client ID as the value
+            option.textContent = client.client_name; // Display the client name
+            clientDropdown.appendChild(option);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching clients:', error);
+    });
+}
+
+// Call fetchClients() when the ServerDetails tab is clicked/opened
+document.getElementById('nav-Server-tab').addEventListener('click', fetchClients);
+
+// GET request: Fetch client names and populate the PurchaseForm dropdown
+function fetchClientsForPurchase() {
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; // Adjust this URL if needed
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched for Purchase:", data); // Log fetched client data
+        const clientDropdown = document.getElementById('client_name_purchase');
+
+        // Clear the current dropdown options
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+        // Populate the dropdown with fetched client names
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; // Use client ID as value
+            option.textContent = client.client_name; // Show client name
+            clientDropdown.appendChild(option);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching clients for Purchase:', error);
+    });
+}
+
+// Call fetchClientsForPurchase() when the PurchaseDetails tab is clicked/opened
+document.getElementById('nav-Purchase-tab').addEventListener('click', fetchClientsForPurchase);
+
+
+// GET request: Enquiry
+function fetchClientsForEnquiry() {
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; // Adjust this URL if needed
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched for Enquiry:", data); // Log fetched client data
+        const clientDropdown = document.getElementById('client_name_Enquiry');
+
+        // Clear the current dropdown options
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+        // Populate the dropdown with fetched client names
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; // Use client ID as value
+            option.textContent = client.client_name; // Show client name
+            clientDropdown.appendChild(option);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching clients for Enquiry:', error);
+    });
+}
+
+// Call fetchClientsForEnquiry() when the EnquiryDetails tab is clicked/opened
+document.getElementById('nav-Enquiry-tab').addEventListener('click', fetchClientsForEnquiry);
+
+
+// GET request: AMC
+function fetchClientsForAMC() {
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; // Adjust this URL if needed
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched for AMC:", data); // Log fetched client data
+        const clientDropdown = document.getElementById('client_name_AMC');
+
+        // Clear the current dropdown options
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+        // Populate the dropdown with fetched client names
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; // Use client ID as value
+            option.textContent = client.client_name; // Show client name
+            clientDropdown.appendChild(option);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching clients for AMC:', error);
+    });
+}
+
+// Call fetchClientsForAMC() when the AMCDetails tab is clicked/opened
+document.getElementById('nav-AMC-tab').addEventListener('click', fetchClientsForAMC);
+
+// GET request: Other
+function fetchClientsForOther() {
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; // Adjust this URL if needed
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched for Other:", data); // Log fetched client data
+        const clientDropdown = document.getElementById('client_name_Other');
+
+        // Clear the current dropdown options
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+        // Populate the dropdown with fetched client names
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; // Use client ID as value
+            option.textContent = client.client_name; // Show client name
+            clientDropdown.appendChild(option);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching clients for Other:', error);
+    });
+}
+
+// Call fetchClientsForOther() when the OtherDetails tab is clicked/opened
+document.getElementById('nav-Other-tab').addEventListener('click', fetchClientsForOther);
+
+// GET request: Follow
+function fetchClientsForFollow() {
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; // Adjust this URL if needed
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched for Follow:", data); // Log fetched client data
+        const clientDropdown = document.getElementById('client_name_Follow');
+
+        // Clear the current dropdown options
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+        // Populate the dropdown with fetched client names
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; // Use client ID as value
+            option.textContent = client.client_name; // Show client name
+            clientDropdown.appendChild(option);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching clients for Other:', error);
+    });
+}
+
+// Call fetchClientsForFollow() when the FollowDetails tab is clicked/opened
+document.getElementById('nav-Follow-tab').addEventListener('click', fetchClientsForFollow);
+
+// GET request: Account
+function fetchClientsForAccount() {
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; // Adjust this URL if needed
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched for Account:", data); // Log fetched client data
+        const clientDropdown = document.getElementById('client_name_Account');
+
+        // Clear the current dropdown options
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+        // Populate the dropdown with fetched client names
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; // Use client ID as value
+            option.textContent = client.client_name; // Show client name
+            clientDropdown.appendChild(option);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching clients for Account:', error);
+    });
+}
+
+// Call fetchClientsForAccount() when the AccountDetails tab is clicked/opened
+document.getElementById('nav-Account-tab').addEventListener('click', fetchClientsForAccount);
 
     // Function to switch between tabs
     function switchTab(currentTabId, nextTabId) {
