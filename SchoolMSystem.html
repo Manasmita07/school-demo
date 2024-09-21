@@ -66,224 +66,301 @@
 
                         
                         <div class="tab-content" id="nav-tabContent">
-                             <!-- Client Details Tab -->
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                <form>
-                                <div class="form-group mt-3">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                        <input type="text" class="form-control" placeholder="Client Name">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                        <input type="text" class="form-control" placeholder="Company Name">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                        <input type="text" class="form-control" placeholder="Contact Person">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                        <input type="text" class="form-control" placeholder="Phone Number">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                        <input type="email" class="form-control" placeholder="Email Address">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                        <input type="text" class="form-control" placeholder="Company Address">
+                            <!-- Client Details Tab -->
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"            
+                              aria-labelledby="nav-home-tab">
+                                <form  id="clientDetailsForm" onsubmit="submitForm(event, 'clientDetailsForm',  
+                                     'nav-home-tab')">
+                                    <div class="form-group mt-3">
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="clientName" placeholder="Client Name" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="companyName"   placeholder="Company Name" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="contactPerson" placeholder="Contact Person" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="number" class="form-control" name="phoneNumber" placeholder="Phone Number" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="email" class="form-control" name="email" placeholder="Email Address" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="companyAdress" placeholder="Company Address" >
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
 
                             <!-- Server Details Tab -->
                             <div class="tab-pane fade" id="nav-Server" role="tabpanel" aria-labelledby="nav-Server-tab">
-                                <form>
+                                <form id="serverDetailsForm" onsubmit="submitForm(event, 'serverDetailsForm', 'nav-Server-tab')">
                                     <div class="form-group mt-3">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Server Model/Type">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Operating System">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Processor Specifications">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="RAM">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="email" class="form-control" placeholder="Storage Capacity">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="IP Address">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Network Configuration Details">
-                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <div class="dropdown-wrapper">
+                                                    <select id="inputState" class="form-control" name="client" >
+                                                        <option value="" disabled selected>Client</option>
+                                                        <option value="clientna"  selected>Client</option>
+                                                    
+                                                    </select>
+                                                    <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="serverModel" placeholder="Server Model/Type" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="operatingSystem" placeholder="Operating System" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="processorSpecification" placeholder="Processor Specifications" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="RAM" placeholder="RAM" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="storageCapacity" placeholder="Storage Capacity" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="ipAddress" placeholder="IP Address" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="networkDetails" placeholder="Network Configuration Details" >
+                                            </div>
                                         </div>
                                     </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
 
                             <!-- Purchase Information Tab -->
                             <div class="tab-pane fade" id="nav-Purchase" role="tabpanel" aria-labelledby="nav-Purchase-tab">
-                                <form>
+                                <form id="PurchaseForm" onsubmit="submitForm(event, 'PurchaseForm', 'nav-Purchase-tab')">
                                     <div class="form-group mt-3">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Purchase Date">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Purchase Order Number">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="License/Serial Number">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Installation Date">
-                                        </div>
-                                        
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <div class="dropdown-wrapper">
+                                                    <select id="inputState" class="form-control" name="client" >
+                                                        <option value="" disabled selected>Client</option>
+                                                        <option value="clientna"  selected>Client</option>
+                                                    
+                                                    </select>
+                                                    <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="purchaseDate" placeholder="Purchase Date" onfocus="(this.type = 'date')" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="number" class="form-control" name="PurchaseNumber" placeholder="Purchase Order Number" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="serialNumber" placeholder="License/Serial Number" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="installationDate" placeholder="Installation Date" onfocus="(this.type = 'date')" >
+                                            </div>
+                                            
                                         </div>
                                     </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
                             <!-- Enquiry Details  Tab -->
-                            <div class="tab-pane fade" id="nav-Enquiry" role="tabpanel"                             aria-labelledby="nav-Enquiry-tab">
-                                <form>
+                            <div class="tab-pane fade" id="nav-Enquiry" role="tabpanel"  aria-labelledby="nav-Enquiry-tab">
+                                <form id="EnquiryForm" onsubmit="submitForm(event, 'EnquiryForm', 'nav-Enquiry-tab')">
                                     <div class="form-group mt-3">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Enquiry Date" onfocus="(this.type = 'date')">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="dropdown-wrapper">
-                                                <select id="inputState" class="form-control">
-                                                    <option value="" disabled selected>Choose</option>
-                                                    <option value="Website">Website</option>
-                                                    <option value="Referral">Referral</option>
-                                                    <option value="Other">Other</option>
-                                                  </select>
-                                                <span class="dropdown-icon" id="dropdownIcon"></span>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <div class="dropdown-wrapper">
+                                                    <select id="inputState" class="form-control" name="client" >
+                                                        <option value="" disabled selected>Client</option>
+                                                        <option value="clientna"  selected>Client</option>
+                                                    
+                                                    </select>
+                                                    <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Enquiry Details/Description">
-                                        </div>
-                                        
-                                        
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="enquiryDate"placeholder="Enquiry Date" onfocus="(this.type = 'date')">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="dropdown-wrapper">
+                                                    <select id="inputState" class="form-control" name="websiteRefer" required>
+                                                        <option value="" disabled selected>Choose</option>
+                                                        <option value="Website">Website</option>
+                                                        <option value="Referral">Referral</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+                                                    <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="enquiryDescription" placeholder="Enquiry Details/Description">
+                                            </div>
+                                            
+                                            
                                         </div>
                                     </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
                             <!-- AMC Information Tab -->
                             <div class="tab-pane fade" id="nav-AMC" role="tabpanel" aria-labelledby="nav-AMC-tab">
-                                <form>
+                                <form id="AMCInfoForm" onsubmit="submitForm(event, 'AMCInfoForm', 'nav-AMC-tab')">
                                     <div class="form-group mt-3">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="AMC Start Date" onfocus="(this.type = 'date')">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="AMC End Date" onfocus="(this.type = 'date')" >
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <div class="dropdown-wrapper">
-                                                <select id="inputState" class="form-control">
-                                                    <option value="" disabled selected>AMC Coverage: (e.g., hardware, software, both)</option>
-                                                    <option value="hardware">hardware</option>
-                                                    <option value="software">software</option>
-                                                    <option value="both">both</option>
-                                                  </select>
-                                                <span class="dropdown-icon" id="dropdownIcon"></span>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <div class="dropdown-wrapper">
+                                                    <select id="inputState" class="form-control" name="client" >
+                                                        <option value="" disabled selected>Client</option>
+                                                        <option value="clientna"  selected>Client</option>
+                                                    
+                                                    </select>
+                                                    <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="amcStart" placeholder="AMC Start Date" onfocus="(this.type = 'date')">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="amcend"placeholder="AMC End Date" onfocus="(this.type = 'date')" >
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <div class="dropdown-wrapper">
+                                                    <select id="inputState" class="form-control" name="amcCoverage"  required>
+                                                        <option value="" disabled selected>AMC Coverage: (e.g., hardware, software, both)</option>
+                                                        <option value="hardware">hardware</option>
+                                                        <option value="software">software</option>
+                                                        <option value="both">both</option>
+                                                    </select>
+                                                    <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="serviceLevel" placeholder="Service Level Agreement (SLA)">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="email" class="form-control" name="ContactforamcEmail" placeholder="Contact for AMC">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="date" class="form-control" name="amcRenewal" placeholder="AMC Renewal Date">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="networkconfigurationDetails" placeholder="Network Configuration Details">
                                             </div>
                                         </div>
-                                        
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Service Level Agreement (SLA)">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="email" class="form-control" placeholder="Contact for AMC">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="date" class="form-control" placeholder="AMC Renewal Date">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Network Configuration Details">
-                                        </div>
-                                        </div>
                                     </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
                             <!-- Other Information Tab -->
                             <div class="tab-pane fade" id="nav-Other" role="tabpanel" aria-labelledby="nav-Other-tab">
-                                <form>
+                                <form id="OtherInfoForm" onsubmit="submitForm(event, 'OtherInfoForm', 'nav-Other-tab')">
                                     <div class="form-group mt-3">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Additional Services Provided">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Customizations">
-                                        </div>
-                                        
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Special Instructions/Notes">
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <input type="text" class="form-control" placeholder="Client Feedback/Comments">
-                                        </div>
-                                        
+                                        <div class="row">
+                                            <div class="col-md-4 mb-3">
+                                                <div class="dropdown-wrapper">
+                                                    <select id="inputState" class="form-control" name="client" >
+                                                        <option value="" disabled selected>Client</option>
+                                                        <option value="clientna"  selected>Client</option>
+                                                    
+                                                    </select>
+                                                    <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+
+                                                <input type="text" class="form-control" name="additionalServices" placeholder="Additional Services Provided">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control"name="Customizations" placeholder="Customizations">
+                                            </div>
+                                            
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="specialInstructions" placeholder="Special Instructions/Notes">
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="clientFeedback" placeholder="Client Feedback/Comments">
+                                            </div>
+                                            
                                         </div>
                                     </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
                             <!-- Follow Information Tab -->
                             <div class="tab-pane fade" id="nav-Follow" role="tabpanel" aria-labelledby="nav-Follow-tab">
-                                <form>
+                                <form id="FollowInfoForm" onsubmit="submitForm(event, 'FollowInfoForm', 'nav-Follow-tab')">
                                     <div class="form-group mt-3">
                                         <div class="row">
                                             <div class="col-md-4 mb-3">
-                                                <input type="text" class="form-control" placeholder="Next Scheduled Follow-up Date" onfocus="(this.type = 'date')">
+                                                <div class="dropdown-wrapper">
+                                                    <select id="inputState" class="form-control" name="client" >
+                                                        <option value="" disabled selected>Client</option>
+                                                        <option value="clientna"  selected>Client</option>
+                                                    
+                                                    </select>
+                                                    <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                </div>
                                             </div>
                                             <div class="col-md-4 mb-3">
-                                                <input type="text" class="form-control" placeholder="Assigned Account Manager">
+                                                <input type="text" class="form-control" name="nextScheduled" placeholder="Next Scheduled Follow-up Date" onfocus="(this.type = 'date')">
                                             </div>
                                             <div class="col-md-4 mb-3">
-                                                <input type="text" class="form-control" placeholder="Action Items">
+                                                <input type="text" class="form-control" name="assignedAccount" placeholder="Assigned Account Manager">
                                             </div>
-                                          
-                                            
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="actionItems"placeholder="Action Items">
+                                            </div>
                                         </div>
                                     </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
                             <!-- Account  Tab -->
                             <div class="tab-pane fade" id="nav-Account" role="tabpanel" aria-labelledby="nav-Account-tab">
-                                <form>
+                                <form id="AccountForm" onsubmit="submitForm(event, 'AccountForm', 'nav-Account-tab')">
                                     <div class="form-group mt-3">
                                         <div class="row">
                                             <div class="col-md-4 mb-3">
-                                                <input type="text" class="form-control" placeholder="Sales Manager" >
+                                                <div class="dropdown-wrapper">
+                                                    <select id="inputState" class="form-control" name="client" >
+                                                        <option value="" disabled selected>Client</option>
+                                                        <option value="clientna"  selected>Client</option>
+                                                    
+                                                    </select>
+                                                    <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                </div>
                                             </div>
                                             <div class="col-md-4 mb-3">
-                                                <input type="text" class="form-control" placeholder="Project Manager">
+                                                <input type="text" class="form-control"name="salesManager" placeholder="Sales Manager" >
                                             </div>
                                             <div class="col-md-4 mb-3">
-                                                <input type="text" class="form-control" placeholder="Deployment Manager">
+                                                <input type="text" class="form-control" name="projectManager" placeholder="Project Manager">
                                             </div>
                                             <div class="col-md-4 mb-3">
-                                                <input type="text" class="form-control" placeholder="Support Manager">
+                                                <input type="text" class="form-control" name="deploymentManager"placeholder="Deployment Manager">
                                             </div>
                                             <div class="col-md-4 mb-3">
-                                                <input type="text" class="form-control" placeholder="Start Date " onfocus="(this.type = 'date')">
+                                                <input type="text" class="form-control" name="supportManager" placeholder="Support Manager">
                                             </div>
                                             <div class="col-md-4 mb-3">
-                                                <input type="text" class="form-control" placeholder="End Date " onfocus="(this.type = 'date')">
+                                                <input type="text" class="form-control" name="startDate" placeholder="Start Date " onfocus="(this.type = 'date')">
                                             </div>
-                                          
-                                            
+                                            <div class="col-md-4 mb-3">
+                                                <input type="text" class="form-control" name="endDate" placeholder="End Date " onfocus="(this.type = 'date')">
+                                            </div>  
                                         </div>
                                     </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
                         </div>
@@ -291,8 +368,8 @@
         
                     <!-- Modal Footer -->
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <!-- <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
                     </div>
         
                 </div>
@@ -990,7 +1067,55 @@
 
 
 
+<script>
+    // Array of tab IDs in the desired order
+    const tabIds = [
+        'nav-home-tab',        // Client Details
+        'nav-Server-tab',      // Server Details
+        'nav-Purchase-tab',    // Purchase Information
+        'nav-Enquiry-tab',     // Enquiry Details
+        'nav-AMC-tab',         // AMC Information
+        'nav-Other-tab',       // Other Information
+        'nav-Follow-tab',      // Follow Information
+        'nav-Account-tab'      // Account Information
+    ];
 
+    function submitForm(event, formId, currentTabId) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Collect form data
+        const form = document.getElementById(formId);
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        console.log("Form Data Submitted:", data); // Log form data
+
+        // Find the index of the current tab and switch to the next one
+        const currentIndex = tabIds.indexOf(currentTabId);
+        if (currentIndex !== -1 && currentIndex < tabIds.length - 1) {
+            const nextTabId = tabIds[currentIndex + 1];
+            switchTab(currentTabId, nextTabId);
+        }
+    }
+
+    // Function to switch between tabs
+    function switchTab(currentTabId, nextTabId) {
+        // Deactivate current tab and content
+        const currentTab = document.getElementById(currentTabId);
+        const currentContent = document.querySelector(`#${currentTabId.replace('-tab', '')}`);
+        if (currentTab) currentTab.classList.remove('active');
+        if (currentContent) currentContent.classList.remove('show', 'active');
+
+        // Activate next tab and content
+        const nextTab = document.getElementById(nextTabId);
+        const nextContent = document.querySelector(`#${nextTabId.replace('-tab', '')}`);
+        if (nextTab) nextTab.classList.add('active');
+        if (nextContent) nextContent.classList.add('show', 'active');
+    }
+</script>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
