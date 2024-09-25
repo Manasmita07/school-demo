@@ -101,7 +101,7 @@
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                         </form>
                                     </div>
-
+                                    
                                     <!-- Server Details Tab -->
                                     <div class="tab-pane fade" id="nav-Server" role="tabpanel" aria-labelledby="nav-Server-tab">
                                         <form id="serverDetailsForm" onsubmit="submitForm(event, 'serverDetailsForm', 'nav-Server-tab', 'http://88.135.73.131:8003/api/server-details/')">
@@ -133,7 +133,12 @@
                                                         <input type="text" class="form-control" name="storage" placeholder="Storage Capacity" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
+<<<<<<< HEAD
                                                         <input type="text" class="form-control" name="ip_address" placeholder="IP Address" required>
+=======
+                                                        <input type="text" class="form-control" id="ip_address" name="ip_address" placeholder="IP Address" oninput="validateIPAddress(this)">
+                                                        <div id="ip_error" style="color: red; display: none;">Please enter a valid IP address with a maximum of 15 characters (numbers and dots only).</div>
+>>>>>>> 0ff739193b8a98dd7698a1e21ae1a2e589d3cbdb
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <input type="text" class="form-control" name="network_config_details" placeholder="Network Configuration Details" required>
@@ -1103,6 +1108,7 @@
         return response.json();
     })
     .then(result => {
+<<<<<<< HEAD
         console.log('Success:', result); 
     }) .then(result => {
         console.log('Success:', result); 
@@ -1125,6 +1131,13 @@
                 </button>
             </div>`;
     });
+=======
+        console.log('Success:', result); // handle success response here
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+>>>>>>> 0ff739193b8a98dd7698a1e21ae1a2e589d3cbdb
 
     // Find the index of the current tab and switch to the next one
     const currentIndex = tabIds.indexOf(currentTabId);
@@ -1918,6 +1931,24 @@ window.addEventListener('DOMContentLoaded', () => {
         if (nextTab) nextTab.classList.add('active');
         if (nextContent) nextContent.classList.add('show', 'active');
     }
+
+
+
+    // validated fields scripts
+    function validateIPAddress(input) {
+        const ipPattern = /^(\d{1,3}\.){0,3}\d{1,3}$/; // Regex pattern for matching IP format (partial or full)
+        const value = input.value;
+
+        // Check if the input matches the pattern and is no longer than 15 characters
+        if (ipPattern.test(value) && value.length <= 15) {
+            document.getElementById('ip_error').style.display = 'none';
+            input.setCustomValidity(''); // Clear any previous invalid state
+        } else {
+            document.getElementById('ip_error').style.display = 'block';
+            input.setCustomValidity('Invalid IP address'); // Set the input as invalid
+        }
+    }
+
 </script>
 
 
