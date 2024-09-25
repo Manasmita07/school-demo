@@ -46,6 +46,7 @@
             <div class="modal-dialog modal-fullscreen">
                 <div class="modal-content">
         
+                    <div id="alert-container" class="text-center"></div>
                     
                     <div class="modal-header">
                         <h4 class="modal-title">Client Information Capture Form</h4>
@@ -87,7 +88,7 @@
                                                         <input type="text" class="form-control" name="contact_person" placeholder="Contact Person" >
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="number" class="form-control" name="phone_number" placeholder="Phone Number" >
+                                                        <input type="number" id="phone_number" class="form-control" name="phone_number" placeholder="Phone Number" >
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <input type="email" class="form-control" name="email_address" placeholder="Email Address" >
@@ -108,7 +109,7 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="client_name" class="form-control" name="client_name" >
+                                                            <select id="client_name" class="form-control" name="client_name" required>
                                                                 <option value="" disabled selected>Client</option>
                                                                 
                                                             
@@ -117,25 +118,25 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="model" placeholder="Server Model/Type" >
+                                                        <input type="text" class="form-control" name="model" placeholder="Server Model/Type" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="operating_system" placeholder="Operating System" >
+                                                        <input type="text" class="form-control" name="operating_system" placeholder="Operating System" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="processor" placeholder="Processor Specifications" >
+                                                        <input type="text" class="form-control" name="processor" placeholder="Processor Specifications" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="ram" placeholder="RAM" >
+                                                        <input type="text" class="form-control" name="ram" placeholder="RAM" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="storage" placeholder="Storage Capacity" >
+                                                        <input type="text" class="form-control" name="storage" placeholder="Storage Capacity" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="ip_address" placeholder="IP Address" >
+                                                        <input type="text" class="form-control" name="ip_address" placeholder="IP Address" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="network_config_details" placeholder="Network Configuration Details" >
+                                                        <input type="text" class="form-control" name="network_config_details" placeholder="Network Configuration Details" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -150,7 +151,7 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="client_name_purchase" class="form-control" name="client_name" >
+                                                            <select id="client_name_purchase" class="form-control" name="client_name" required >
                                                                 <option value="" disabled selected>Client</option>
                                                                 
                                                             
@@ -159,16 +160,16 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="purchase_date" placeholder="Purchase Date" onfocus="(this.type = 'date')" >
+                                                        <input type="text" class="form-control" name="purchase_date" placeholder="Purchase Date" onfocus="(this.type = 'date')" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="number" class="form-control" name="purchase_order_number" placeholder="Purchase Order Number" >
+                                                        <input type="number" class="form-control" name="purchase_order_number" placeholder="Purchase Order Number" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="license_serial_number" placeholder="License/Serial Number" >
+                                                        <input type="text" class="form-control" name="license_serial_number" placeholder="License/Serial Number" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="installation_date" placeholder="Installation Date" onfocus="(this.type = 'date')" >
+                                                        <input type="text" class="form-control" name="installation_date" placeholder="Installation Date" onfocus="(this.type = 'date')" required>
                                                     </div>
                                                     
                                                 </div>
@@ -183,7 +184,7 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="client_name_Enquiry" class="form-control" name="client_name" >
+                                                            <select id="client_name_Enquiry" class="form-control" name="client_name" required>
                                                                 <option value="" disabled selected>Client</option>
                                                                 
                                                             
@@ -192,7 +193,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="enquiry_date"placeholder="Enquiry Date" onfocus="(this.type = 'date')">
+                                                        <input type="text" class="form-control" name="enquiry_date"
+                                                        placeholder="Enquiry Date" onfocus="(this.type = 'date')"requiredrequired>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
@@ -206,7 +208,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="enquiry_details" placeholder="Enquiry Details/Description">
+                                                        <input type="text" class="form-control" name="enquiry_details" placeholder="Enquiry Details/Description" required>
                                                     </div>
                                                     
                                                     
@@ -222,7 +224,7 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="client_name_AMC" class="form-control" name="client_name" >
+                                                            <select id="client_name_AMC" class="form-control" name="client_name" required >
                                                                 <option value="" disabled selected>Client</option>
                                                                
                                                             
@@ -231,10 +233,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="amc_start_date" placeholder="AMC Start Date" onfocus="(this.type = 'date')">
+                                                        <input type="text" class="form-control" name="amc_start_date" placeholder="AMC Start Date" onfocus="(this.type = 'date')" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="amc_end_date"placeholder="AMC End Date" onfocus="(this.type = 'date')" >
+                                                        <input type="text" class="form-control" name="amc_end_date"
+                                                        placeholder="AMC End Date" onfocus="(this.type = 'date')" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
@@ -249,16 +252,16 @@
                                                     </div>
                                                     
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="services_level_agreement" placeholder="Service Level Agreement (SLA)">
+                                                        <input type="text" class="form-control" name="services_level_agreement" placeholder="Service Level Agreement (SLA)" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="email" class="form-control" name="amc_contact" placeholder="Contact for AMC">
+                                                        <input type="email" class="form-control" name="amc_contact" placeholder="Contact for AMC" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="date" class="form-control" name="date" placeholder="AMC Renewal Date">
+                                                        <input type="date" class="form-control" name="date" placeholder="AMC Renewal Date" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="network_config" placeholder="Network Configuration Details">
+                                                        <input type="text" class="form-control" name="network_config" placeholder="Network Configuration Details" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -272,7 +275,7 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="client_name_Other" class="form-control" name="client_name" >
+                                                            <select id="client_name_Other" class="form-control" name="client_name" required required>
                                                                 <option value="" disabled selected>Client</option>
                                                                
                                                             
@@ -280,18 +283,18 @@
                                                             <span class="dropdown-icon" id="dropdownIcon"></span>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4 mb-3">
+                                                    <div class="col-md-4 mb-3" required>
 
                                                         <input type="text" class="form-control" name="additional_services_provide" placeholder="Additional Services Provided">
                                                     </div>
-                                                    <div class="col-md-4 mb-3">
+                                                    <div class="col-md-4 mb-3" required>
                                                         <input type="text" class="form-control"name="customizations" placeholder="Customizations">
                                                     </div>
                                                     
-                                                    <div class="col-md-4 mb-3">
+                                                    <div class="col-md-4 mb-3" required>
                                                         <input type="text" class="form-control" name="special_instructions" placeholder="Special Instructions/Notes">
                                                     </div>
-                                                    <div class="col-md-4 mb-3">
+                                                    <div class="col-md-4 mb-3" required>
                                                         <input type="text" class="form-control" name="client_feedback" placeholder="Client Feedback/Comments">
                                                     </div>
                                                     
@@ -307,7 +310,7 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="client_name_Follow" class="form-control" name="client_name" >
+                                                            <select id="client_name_Follow" class="form-control" name="client_name" required>
                                                                 <option value="" disabled selected>Client</option>
                                                                 
                                                             
@@ -316,13 +319,13 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="next_scheduled_follow_up_date" placeholder="Next Scheduled Follow-up Date" onfocus="(this.type = 'date')">
+                                                        <input type="text" class="form-control" name="next_scheduled_follow_up_date" placeholder="Next Scheduled Follow-up Date" onfocus="(this.type = 'date')" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="assigned_account_manager" placeholder="Assigned Account Manager">
+                                                        <input type="text" class="form-control" name="assigned_account_manager" placeholder="Assigned Account Manager" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="action_items"placeholder="Action Items">
+                                                        <input type="text" class="form-control" name="action_items"placeholder="Action Items" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -336,7 +339,7 @@
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <div class="dropdown-wrapper">
-                                                            <select id="client_name_Account" class="form-control" name="client_name" >
+                                                            <select id="client_name_Account" class="form-control" name="client_name" required>
                                                                 <option value="" disabled selected>Client</option>
                                                                
                                                             
@@ -345,22 +348,22 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control"name="sales_manager" placeholder="Sales Manager" >
+                                                        <input type="text" class="form-control"name="sales_manager" placeholder="Sales Manager"  required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="project_manager" placeholder="Project Manager">
+                                                        <input type="text" class="form-control" name="project_manager" placeholder="Project Manager" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="deployment_manager"placeholder="Deployment Manager">
+                                                        <input type="text" class="form-control" name="deployment_manager"placeholder="Deployment Manager" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="support_manager" placeholder="Support Manager">
+                                                        <input type="text" class="form-control" name="support_manager" placeholder="Support Manager" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="start_date" placeholder="Start Date " onfocus="(this.type = 'date')">
+                                                        <input type="text" class="form-control" name="start_date" placeholder="Start Date " onfocus="(this.type = 'date')" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <input type="text" class="form-control" name="end_date" placeholder="End Date " onfocus="(this.type = 'date')">
+                                                        <input type="text" class="form-control" name="end_date" placeholder="End Date " onfocus="(this.type = 'date')" required>
                                                     </div>  
                                                 </div>
                                             </div>
@@ -1040,7 +1043,7 @@
     </script>
 
 <script>
-    // Array of tab IDs in the desired order
+
     const tabIds = [
         'nav-home-tab',        // Client Details
         'nav-Server-tab',      // Server Details
@@ -1052,9 +1055,22 @@
         'nav-Account-tab'      // Account Information
     ];
 
+    function validatePhoneNumber(phoneNumber) {
+    const phonePattern = /^(\+91[\-\s]?)?[7-9]\d{9}$/; 
+    return phonePattern.test(phoneNumber);
+}
+
     function submitForm(event, formId, currentTabId, apiUrl) {
     event.preventDefault(); 
 
+
+    window.addEventListener('beforeunload', () => {
+        localStorage.removeItem('selectedClientId');
+    });
+     
+    
+    const alertContainer = document.getElementById('alert-container');
+    alertContainer.innerHTML = '';
     // Collect form data
     const form = document.getElementById(formId);
     const formData = new FormData(form);
@@ -1063,26 +1079,51 @@
         data[key] = value;
     });
 
-    console.log("Form Data Submitted:", data); // Log form data to check if client_id is being sent
+        if (formId === 'clientDetailsForm') {
+            const phoneNumber = document.getElementById('phone_number').value;
+            if (phoneNumber && !validatePhoneNumber(phoneNumber)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return;
+            }
+        }
+
+    console.log("Form Data Submitted:", data); 
 
     fetch(apiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data), // Send the form data as JSON
+        body: JSON.stringify(data), 
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('400 Bad Request'); // Handle bad request
+            throw new Error('400 Bad Request'); 
         }
         return response.json();
     })
     .then(result => {
-        console.log('Success:', result); // handle success response here
+        console.log('Success:', result); 
+    }) .then(result => {
+        console.log('Success:', result); 
+
+        alertContainer.innerHTML = `
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                Form submitted successfully!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>`;
     })
     .catch(error => {
         console.error('Error:', error);
+         alertContainer.innerHTML = `
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Form submission failed. Please try again.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>`;
     });
 
     // Find the index of the current tab and switch to the next one
@@ -1093,10 +1134,10 @@
     }
 }
 
-// GET request: Fetch client names and populate the dropdown
+// GET request: Fetch client names and populate in the dropdown
 function fetchClients() {
     const apiUrl = 'http://88.135.73.131:8003/api/clients/'; 
-
+    console.log("Fetching clients...");
     fetch(apiUrl, {
         method: 'GET',
         headers: {
@@ -1105,32 +1146,42 @@ function fetchClients() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log("Clients Fetched:", data); // Log fetched client data
+        console.log("Clients Fetched:", data); 
         const clientDropdown = document.getElementById('client_name');
 
-        // Clear the current dropdown options
         clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
 
-        // Populate the dropdown with fetched client names
+        // Retrieve the previously selected client ID from localStorage
+        const savedClientId = localStorage.getItem('selectedClientId');
         data.forEach(client => {
             const option = document.createElement('option');
-            option.value = client.id; // Set the client ID as the value
-            option.textContent = client.client_name; // Display the client name
+            option.value = client.id; 
+            option.textContent = client.client_name; 
             clientDropdown.appendChild(option);
+
+            // option.selected = true;
+            // console.log("Checking if saved ID matches client:", client.id);
+
+
+            // if (String(client.id) === String(savedClientId)) {
+                
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
         });
+        
+        localStorage.removeItem('selectedClientId');
     })
     .catch(error => {
         console.error('Error fetching clients:', error);
     });
 }
 
-// Call fetchClients() when the ServerDetails tab is clicked/opened
-document.getElementById('nav-Server-tab').addEventListener('click', fetchClients);
 
-// GET request: Fetch client names and populate the PurchaseForm dropdown
-function fetchClientsForPurchase() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; // Adjust this URL if needed
-
+function fetchClientData(clientId) {
+    const apiUrl = 'http://88.135.73.131:8003/api/server-details/';
+    
     fetch(apiUrl, {
         method: 'GET',
         headers: {
@@ -1139,33 +1190,180 @@ function fetchClientsForPurchase() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log("Clients Fetched for Purchase:", data); // Log fetched client data
-        const clientDropdown = document.getElementById('client_name_purchase');
+        // Find the server details associated with the selected client
+        const serverDetails = data.find(item => item.client_name === parseInt(clientId));
 
-        // Clear the current dropdown options
-        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+        // Clear the form fields before populating them
+        clearFormFields();
 
-        // Populate the dropdown with fetched client names
-        data.forEach(client => {
-            const option = document.createElement('option');
-            option.value = client.id; // Use client ID as value
-            option.textContent = client.client_name; // Show client name
-            clientDropdown.appendChild(option);
-        });
+        if (serverDetails) {
+            // Populate the form fields with the found server details
+            document.querySelector('input[name="model"]').value = serverDetails.model || '';
+            document.querySelector('input[name="operating_system"]').value = serverDetails.operating_system || '';
+            document.querySelector('input[name="processor"]').value = serverDetails.processor || '';
+            document.querySelector('input[name="ram"]').value = serverDetails.ram || '';
+            document.querySelector('input[name="storage"]').value = serverDetails.storage || '';
+            document.querySelector('input[name="ip_address"]').value = serverDetails.ip_address || '';
+            document.querySelector('input[name="network_config_details"]').value = serverDetails.network_config_details || '';
+        } else {
+            console.warn('No server details found for the selected client.');
+        }
     })
     .catch(error => {
-        console.error('Error fetching clients for Purchase:', error);
+        console.error('Error fetching server details:', error);
     });
 }
 
-// Call fetchClientsForPurchase() when the PurchaseDetails tab is clicked/opened
-document.getElementById('nav-Purchase-tab').addEventListener('click', fetchClientsForPurchase);
+// Function to clear the form fields
+function clearFormFields() {
+    document.querySelector('input[name="model"]').value = '';
+    document.querySelector('input[name="operating_system"]').value = '';
+    document.querySelector('input[name="processor"]').value = '';
+    document.querySelector('input[name="ram"]').value = '';
+    document.querySelector('input[name="storage"]').value = '';
+    document.querySelector('input[name="ip_address"]').value = '';
+    document.querySelector('input[name="network_config_details"]').value = '';
+}
+
+// Save the selected value in localStorage when the dropdown changes
+document.getElementById('client_name').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId', selectedClientId);
+
+    // Fetch client data when a client is selected
+    if (selectedClientId) {
+        fetchClientData(selectedClientId);
+    }
+});
+
+document.getElementById('nav-Server-tab').addEventListener('click', () => {
+    fetchClients();
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClients();
+});
+
+
+// GET request: PurchaseForm dropdown
+function fetchClientsForPurchase() {
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; 
+    console.log("Fetching clients...");
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Clients Fetched for Purchase:", data); 
+        const clientDropdown = document.getElementById('client_name_purchase');
+
+        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+        // Retrieve the previously selected client ID from localStorage
+        const savedClientId = localStorage.getItem('selectedClientId');
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; 
+            option.textContent = client.client_name;
+            
+             
+            clientDropdown.appendChild(option);
+            if (String(client.id) === String(savedClientId)) {
+                option.selected = true;
+            }
+           
+            // console.log("Checking if saved ID matches client:", client.id);
+
+           
+            // if (String(client.id) === String(savedClientId)) {
+            //     console.log(`Match found! Setting client "${client.client_name}" as selected.`);
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
+        });
+        // localStorage.removeItem('selectedClientId');
+        if (data.length === 0) {
+            console.warn("No clients available to display.");
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching clients:', error);
+    });
+}
+
+function fetchClientPurData(clientId) {
+    const apiUrl = 'http://88.135.73.131:8003/api/purchase-information/';
+    
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+       
+        const PurchaseDetails = data.find(item => item.client_name=== parseInt(clientId));
+
+        clearFormFields();
+
+        if (PurchaseDetails) {
+            // Populate the form fields with the found Purchase details
+            document.querySelector('input[name="purchase_date"]').value = PurchaseDetails.purchase_date || '';
+            document.querySelector('input[name="purchase_order_number"]').value = PurchaseDetails.purchase_order_number || '';
+            document.querySelector('input[name="license_serial_number"]').value = PurchaseDetails.license_serial_number || '';
+            document.querySelector('input[name="installation_date"]').value = PurchaseDetails.installation_date || '';
+            
+        } else {
+            console.warn('No Purchase details found for the selected client.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching Purchase details:', error);
+    });
+}
+
+// Function to clear the form fields
+function clearFormFields() {
+    document.querySelector('input[name="purchase_date"]').value = '';
+    document.querySelector('input[name="purchase_order_number"]').value = '';
+    document.querySelector('input[name="license_serial_number"]').value = '';
+    document.querySelector('input[name="installation_date"]').value = '';
+    
+}
+
+// Save the selected value in localStorage when the dropdown changes
+document.getElementById('client_name_purchase').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId', selectedClientId);
+
+    // Fetch client data when a client is selected
+    if (selectedClientId) {
+        fetchClientPurData(selectedClientId);
+    }
+});
+
+// Call fetchClients() when the ServerDetails tab is clicked/opened
+document.getElementById('nav-Purchase-tab').addEventListener('click', () => {
+    fetchClientsForPurchase();
+});
+
+// Also, restore the value when the page reloads
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClientsForPurchase();
+});
+
+
 
 
 // GET request: Enquiry
 function fetchClientsForEnquiry() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; // Adjust this URL if needed
-
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; 
+    console.log("Fetching clients for Enquiry...");
     fetch(apiUrl, {
         method: 'GET',
         headers: {
@@ -1174,32 +1372,106 @@ function fetchClientsForEnquiry() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log("Clients Fetched for Enquiry:", data); // Log fetched client data
+        console.log("Clients Fetched for Enquiry:", data); 
         const clientDropdown = document.getElementById('client_name_Enquiry');
 
         // Clear the current dropdown options
         clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
 
-        // Populate the dropdown with fetched client names
+       // Retrieve the previously selected client ID from localStorage
+       const savedClientId = localStorage.getItem('selectedClientId');
         data.forEach(client => {
             const option = document.createElement('option');
-            option.value = client.id; // Use client ID as value
-            option.textContent = client.client_name; // Show client name
+            option.value = client.id; 
+            option.textContent = client.client_name; 
+
             clientDropdown.appendChild(option);
+            if (String(client.id) === String(savedClientId)) {
+                option.selected = true;
+            }
+            // console.log("Checking if saved ID matches client:", client.id);
+
+        
+            // if (String(client.id) === String(savedClientId)) {
+            //     console.log(`Match found! Setting client "${client.client_name}" as selected.`);
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
         });
+        if (data.length === 0) {
+            console.warn("No clients available to display.");
+        }
     })
     .catch(error => {
         console.error('Error fetching clients for Enquiry:', error);
     });
 }
 
-// Call fetchClientsForEnquiry() when the EnquiryDetails tab is clicked/opened
-document.getElementById('nav-Enquiry-tab').addEventListener('click', fetchClientsForEnquiry);
 
+function fetchClientEnquiryData(clientId) {
+    const apiUrl = 'http://88.135.73.131:8003/api/enquiries/';
+    
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Find the server details associated with the selected client
+        const EnquiryDetails = data.find(item => item.client_name=== parseInt(clientId));
+
+        // Clear the form fields before populating them
+        clearFormFields();
+
+        if (EnquiryDetails) {
+            // Populate the form fields with the found Purchase details
+            document.querySelector('input[name="enquiry_date"]').value = EnquiryDetails.enquiry_date || '';
+            document.querySelector('select[name="enquiry_choose"]').value = EnquiryDetails.enquiry_choose || '';
+            document.querySelector('input[name="enquiry_details"]').value = EnquiryDetails.enquiry_details || '';
+            
+            
+        } else {
+            console.warn('No Purchase details found for the selected client.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching Purchase details:', error);
+    });
+}
+
+// Function to clear the form fields
+function clearFormFields() {
+document.querySelector('input[name="enquiry_date"]').value = '';
+document.querySelector('select[name="enquiry_choose"]').value = '';
+document.querySelector('input[name="enquiry_details"]').value = '';
+    
+    
+}
+// Save the selected value in localStorage when the dropdown changes
+document.getElementById('client_name_Enquiry').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId', selectedClientId); 
+    // Fetch client data when a client is selected
+    if (selectedClientId) {
+        fetchClientEnquiryData(selectedClientId);
+    }
+});
+
+// Call fetchClientsForEnquiry() when the EnquiryDetails tab is clicked/opened
+document.getElementById('nav-Enquiry-tab').addEventListener('click', () => { fetchClientsForEnquiry();
+});
+
+// Also, restore the value when the page reloads
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClientsForEnquiry();
+});
 
 // GET request: AMC
 function fetchClientsForAMC() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; // Adjust this URL if needed
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; console.log("Fetching clients..."); 
 
     fetch(apiUrl, {
         method: 'GET',
@@ -1215,25 +1487,107 @@ function fetchClientsForAMC() {
         // Clear the current dropdown options
         clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
 
-        // Populate the dropdown with fetched client names
+         // Retrieve the previously selected client ID from localStorage
+         const savedClientId = localStorage.getItem('selectedClientId');
         data.forEach(client => {
             const option = document.createElement('option');
-            option.value = client.id; // Use client ID as value
-            option.textContent = client.client_name; // Show client name
+            option.value = client.id; 
+            option.textContent = client.client_name; 
+
             clientDropdown.appendChild(option);
+            if (String(client.id) === String(savedClientId)) {
+                option.selected = true;
+            }
+           
+            // console.log("Checking if saved ID matches client:", client.id);
+
+            // If this option matches the saved client ID, mark it as selected
+            // if (String(client.id) === String(savedClientId)) {
+            //     console.log(`Match found! Setting client "${client.client_name}" as selected.`);
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
         });
+        if (data.length === 0) {
+            console.warn("No clients available to display.");
+        }
     })
     .catch(error => {
         console.error('Error fetching clients for AMC:', error);
     });
 }
 
-// Call fetchClientsForAMC() when the AMCDetails tab is clicked/opened
-document.getElementById('nav-AMC-tab').addEventListener('click', fetchClientsForAMC);
+function fetchClientAMCData(clientId) {
+    const apiUrl = 'http://88.135.73.131:8003/api/amcs/';
+    
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+      
+        const AMCDetails = data.find(item => item.client_name=== parseInt(clientId));
+
+        
+        clearFormFields();
+
+        if (AMCDetails) {
+           
+            document.querySelector('input[name="amc_start_date"]').value = AMCDetails.amc_start_date || '';
+            document.querySelector('input[name="amc_end_date"]').value = AMCDetails.amc_end_date || '';
+            document.querySelector('select[name="coverage_type"]').value = AMCDetails.coverage_type || '';
+            document.querySelector('input[name="services_level_agreement"]').value = AMCDetails.services_level_agreement || '';
+            document.querySelector('input[name="amc_contact"]').value = AMCDetails.amc_contact || '';
+            document.querySelector('input[name="date"]').value = AMCDetails.date || '';
+            document.querySelector('input[name="network_config"]').value = AMCDetails.network_config || '';
+            
+            
+        } else {
+            console.warn('No Purchase details found for the selected client.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching Purchase details:', error);
+    });
+}
+
+// Function to clear the form fields
+function clearFormFields() {
+    document.querySelector('input[name="amc_start_date"]').value = '';
+    document.querySelector('input[name="amc_end_date"]').value = '';
+    document.querySelector('select[name="coverage_type"]').value = '';
+    document.querySelector('input[name="services_level_agreement"]').value = '';
+    document.querySelector('input[name="amc_contact"]').value = '';
+    document.querySelector('input[name="date"]').value = '';
+    document.querySelector('input[name="network_config"]').value = '';
+          
+}
+
+
+document.getElementById('client_name_AMC').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId', selectedClientId); 
+
+    if (selectedClientId) {
+        fetchClientAMCData(selectedClientId);
+    }
+});
+
+
+document.getElementById('nav-AMC-tab').addEventListener('click',() =>  {fetchClientsForAMC();
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClientsForAMC();
+});
 
 // GET request: Other
 function fetchClientsForOther() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; // Adjust this URL if needed
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/';  console.log("Fetching clients...");
 
     fetch(apiUrl, {
         method: 'GET',
@@ -1246,28 +1600,100 @@ function fetchClientsForOther() {
         console.log("Clients Fetched for Other:", data); // Log fetched client data
         const clientDropdown = document.getElementById('client_name_Other');
 
-        // Clear the current dropdown options
         clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
 
-        // Populate the dropdown with fetched client names
+       const savedClientId = localStorage.getItem('selectedClientId');
         data.forEach(client => {
             const option = document.createElement('option');
-            option.value = client.id; // Use client ID as value
-            option.textContent = client.client_name; // Show client name
+            option.value = client.id; 
+            option.textContent = client.client_name; 
+
             clientDropdown.appendChild(option);
+            if (String(client.id) === String(savedClientId)) {
+                option.selected = true;
+            }
+           
+            // console.log("Checking if saved ID matches client:", client.id);
+
+            // If this option matches the saved client ID, mark it as selected
+            // if (String(client.id) === String(savedClientId)) {
+            //     console.log(`Match found! Setting client "${client.client_name}" as selected.`);
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
         });
+        if (data.length === 0) {
+            console.warn("No clients available to display.");
+        }
     })
     .catch(error => {
         console.error('Error fetching clients for Other:', error);
     });
 }
 
-// Call fetchClientsForOther() when the OtherDetails tab is clicked/opened
-document.getElementById('nav-Other-tab').addEventListener('click', fetchClientsForOther);
+function fetchClientOtherData(clientId) {
+    const apiUrl = 'http://88.135.73.131:8003/api/other-informations/';
+    
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Find the server details associated with the selected client
+        const OtherDetails = data.find(item => item.client_name=== parseInt(clientId));
+
+        // Clear the form fields before populating them
+        clearFormFields();
+
+        if (OtherDetails) {
+            // Populate the form fields with the found Purchase details
+            document.querySelector('input[name="additional_services_provide"]').value = OtherDetails.additional_services_provide || '';
+            document.querySelector('input[name="customizations"]').value = OtherDetails.customizations || '';
+            document.querySelector('input[name="special_instructions"]').value = OtherDetails.special_instructions || '';
+            document.querySelector('input[name="client_feedback"]').value = OtherDetails.client_feedback || '';
+            
+        } else {
+            console.warn('No Purchase details found for the selected client.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching Purchase details:', error);
+    });
+}
+
+// Function to clear the form fields
+function clearFormFields() {
+    document.querySelector('input[name="additional_services_provide"]').value =  '';
+    document.querySelector('input[name="customizations"]').value =  '';
+    document.querySelector('input[name="special_instructions"]').value =  '';
+    document.querySelector('input[name="client_feedback"]').value ='';
+
+    
+}
+
+document.getElementById('client_name_Other').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId', selectedClientId); 
+       // Fetch client data when a client is selected
+       if (selectedClientId) {
+        fetchClientOtherData(selectedClientId);
+    }
+});
+
+document.getElementById('nav-Other-tab').addEventListener('click',  () => {fetchClientsForOther();
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClientsForOther();
+});
 
 // GET request: Follow
 function fetchClientsForFollow() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; // Adjust this URL if needed
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/';console.log("Fetching clients...");
 
     fetch(apiUrl, {
         method: 'GET',
@@ -1283,26 +1709,40 @@ function fetchClientsForFollow() {
         // Clear the current dropdown options
         clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
 
-        // Populate the dropdown with fetched client names
+          // Retrieve the previously selected client ID from localStorage
+          const savedClientId = localStorage.getItem('selectedClientId');
         data.forEach(client => {
             const option = document.createElement('option');
-            option.value = client.id; // Use client ID as value
-            option.textContent = client.client_name; // Show client name
+            option.value = client.id; 
+            option.textContent = client.client_name; 
+
             clientDropdown.appendChild(option);
+            if (String(client.id) === String(savedClientId)) {
+                option.selected = true;
+            }
+        
+            // console.log("Checking if saved ID matches client:", client.id);
+
+            // If this option matches the saved client ID, mark it as selected
+            // if (String(client.id) === String(savedClientId)) {
+            //     console.log(`Match found! Setting client "${client.client_name}" as selected.`);
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
         });
+        if (data.length === 0) {
+            console.warn("No clients available to display.");
+        }
     })
     .catch(error => {
         console.error('Error fetching clients for Other:', error);
     });
 }
 
-// Call fetchClientsForFollow() when the FollowDetails tab is clicked/opened
-document.getElementById('nav-Follow-tab').addEventListener('click', fetchClientsForFollow);
-
-// GET request: Account
-function fetchClientsForAccount() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; // Adjust this URL if needed
-
+function fetchClientFollowData(clientId) {
+    const apiUrl ='http://88.135.73.131:8003/api/follow-up-actions/';
+    
     fetch(apiUrl, {
         method: 'GET',
         headers: {
@@ -1311,37 +1751,168 @@ function fetchClientsForAccount() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log("Clients Fetched for Account:", data); // Log fetched client data
-        const clientDropdown = document.getElementById('client_name_Account');
+       
+        const followDetails = data.find(item => item.client_name=== parseInt(clientId));
 
-        // Clear the current dropdown options
-        clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+        clearFormFields();
 
-        // Populate the dropdown with fetched client names
-        data.forEach(client => {
-            const option = document.createElement('option');
-            option.value = client.id; // Use client ID as value
-            option.textContent = client.client_name; // Show client name
-            clientDropdown.appendChild(option);
-        });
+        if (followDetails) {
+
+            document.querySelector('input[name="next_scheduled_follow_up_date"]').value = followDetails.next_scheduled_follow_up_date || '';
+            document.querySelector('input[name="assigned_account_manager"]').value = followDetails.assigned_account_manager || '';
+            document.querySelector('input[name="action_items"]').value = followDetails.action_items || '';
+            
+        } else {
+            console.warn('No Follow details found for the selected client.');
+        }
     })
     .catch(error => {
-        console.error('Error fetching clients for Account:', error);
+        console.error('Error fetching Follow details:', error);
     });
 }
 
-// Call fetchClientsForAccount() when the AccountDetails tab is clicked/opened
-document.getElementById('nav-Account-tab').addEventListener('click', fetchClientsForAccount);
+function clearFormFields() {
+    document.querySelector('input[name="next_scheduled_follow_up_date"]').value = '';
+    document.querySelector('input[name="assigned_account_manager"]').value = '';
+    document.querySelector('input[name="action_items"]').value = '';  
+}
 
+document.getElementById('client_name_Follow').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId', selectedClientId); 
+      
+      if (selectedClientId) {
+        fetchClientFollowData(selectedClientId);
+    }
+});
+
+document.getElementById('nav-Follow-tab').addEventListener('click',() => {
+        fetchClientsForFollow();
+     });
+
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClientsForFollow();
+});
+
+// GET request: Account
+function fetchClientsForAccount() {
+    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; 
+    console.log("Fetching clients...");
+
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Clients Fetched for Account:", data); 
+                const clientDropdown = document.getElementById('client_name_Account');
+
+               
+                clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
+
+              // Retrieve the previously selected client ID from localStorage
+        const savedClientId = localStorage.getItem('selectedClientId');
+        data.forEach(client => {
+            const option = document.createElement('option');
+            option.value = client.id; 
+            option.textContent = client.client_name; 
+
+            
+            clientDropdown.appendChild(option);
+            if (String(client.id) === String(savedClientId)) {
+                option.selected = true;
+            }
+            // console.log("Checking if saved ID matches client:", client.id);
+
+            // If this option matches the saved client ID, mark it as selected
+            // if (String(client.id) === String(savedClientId)) {
+            //     console.log(`Match found! Setting client "${client.client_name}" as selected.`);
+            //     option.selected = true;
+            // }
+
+            // clientDropdown.appendChild(option);
+        });
+        if (data.length === 0) {
+            console.warn("No clients available to display.");
+        }
+    })
+            .catch(error => {
+                console.error('Error fetching clients for Account:', error);
+        });
+    }
+
+    function fetchClientAccountData(clientId) {
+    const apiUrl = 'http://88.135.73.131:8003/api/account-managers/';
+    
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Find the server details associated with the selected client
+        const AccountDetails = data.find(item => item.client_name=== parseInt(clientId));
+
+        clearFormFields();
+
+        if (AccountDetails) {
+            
+            document.querySelector('input[name="sales_manager"]').value = AccountDetails.sales_manager || '';
+            document.querySelector('input[name="project_manager"]').value = AccountDetails.project_manager || '';
+            document.querySelector('input[name="deployment_manager"]').value = AccountDetails.deployment_manager || '';
+            document.querySelector('input[name="support_manager"]').value = AccountDetails.support_manager || '';
+            document.querySelector('input[name="start_date"]').value = AccountDetails.start_date || '';
+            document.querySelector('input[name="end_date"]').value = AccountDetails.end_date || '';
+            
+        } else {
+            console.warn('No Purchase details found for the selected client.');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching Purchase details:', error);
+    });
+}
+
+// Function to clear the form fields
+function clearFormFields() {
+    
+    document.querySelector('input[name="sales_manager"]').value =  '';
+    document.querySelector('input[name="project_manager"]').value =  '';
+    document.querySelector('input[name="deployment_manager"]').value =  '';
+    document.querySelector('input[name="support_manager"]').value = '';
+    document.querySelector('input[name="start_date"]').value =  '';
+    document.querySelector('input[name="end_date"]').value = '';
+ 
+}
+document.getElementById('client_name_Account').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId', selectedClientId);
+    
+     if (selectedClientId) {
+        fetchClientAccountData(selectedClientId);
+    } 
+});
+
+    document.getElementById('nav-Account-tab').addEventListener('click',() => {fetchClientsForAccount();
+    });
+
+window.addEventListener('DOMContentLoaded', () => {
+    fetchClientsForAccount();
+});
     // Function to switch between tabs
     function switchTab(currentTabId, nextTabId) {
-        // Deactivate current tab and content
+        
         const currentTab = document.getElementById(currentTabId);
         const currentContent = document.querySelector(`#${currentTabId.replace('-tab', '')}`);
         if (currentTab) currentTab.classList.remove('active');
         if (currentContent) currentContent.classList.remove('show', 'active');
 
-        // Activate next tab and content
+      
         const nextTab = document.getElementById(nextTabId);
         const nextContent = document.querySelector(`#${nextTabId.replace('-tab', '')}`);
         if (nextTab) nextTab.classList.add('active');
