@@ -7,6 +7,7 @@
     <title>Human Resource System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/327f8bc84b.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./assets/SMS.css">
     <style>
@@ -38,7 +39,8 @@
     <section>
         
         <button type="button" class="fixed-button" data-toggle="modal" data-target="#myModal">
-          <span class="mdi mdi-arrow-left"></span>
+          <!-- <span class="mdi mdi-arrow-left"></span> -->
+          <span><i class="fa-solid fa-arrow-left fa-flip"></i></span>
         </button>
       
         
@@ -75,7 +77,7 @@
                                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel"            
                                       aria-labelledby="nav-home-tab">
                                         <form  id="clientDetailsForm" onsubmit="submitForm(event, 'clientDetailsForm',  
-                                             'nav-home-tab', 'http://88.135.73.131:8003/api/clients/')">
+                                             'nav-home-tab', 'http://192.168.29.17:8004/api/clients/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -96,6 +98,21 @@
                                                     <div class="col-md-4 mb-3">
                                                         <input type="text" class="form-control" name="company_address" placeholder="Company Address" >
                                                     </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="product" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Real-Estate CRM</option>
+                                                                <option value="Referral">Construction Management</option>
+                                                                <option value="Referral">School ERP</option>
+                                                                <option value="Referral">E-Commerce</option>
+                                                                <option value="Referral">HRMS</option>
+                                                                <option value="Referral">Telematic Solutions</option>
+                                                                <option value="Referral">Camera Analytics</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -104,7 +121,7 @@
                                     
                                     <!-- Server Details Tab -->
                                     <div class="tab-pane fade" id="nav-Server" role="tabpanel" aria-labelledby="nav-Server-tab">
-                                        <form id="serverDetailsForm" onsubmit="submitForm(event, 'serverDetailsForm', 'nav-Server-tab', 'http://88.135.73.131:8003/api/server-details/')">
+                                        <form id="serverDetailsForm" onsubmit="submitForm(event, 'serverDetailsForm', 'nav-Server-tab', 'http://192.168.29.17:8004/api/server-details/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -133,16 +150,25 @@
                                                         <input type="text" class="form-control" name="storage" placeholder="Storage Capacity" required>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-<<<<<<< HEAD
                                                         <input type="text" class="form-control" name="ip_address" placeholder="IP Address" required>
-=======
-                                                        <input type="text" class="form-control" id="ip_address" name="ip_address" placeholder="IP Address" oninput="validateIPAddress(this)">
-                                                        <div id="ip_error" style="color: red; display: none;">Please enter a valid IP address with a maximum of 15 characters (numbers and dots only).</div>
->>>>>>> 0ff739193b8a98dd7698a1e21ae1a2e589d3cbdb
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <input type="text" class="form-control" name="network_config_details" placeholder="Network Configuration Details" required>
                                                     </div>
+                                                    
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
+
+                                                    
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -151,7 +177,7 @@
 
                                     <!-- Purchase Information Tab -->
                                     <div class="tab-pane fade" id="nav-Purchase" role="tabpanel" aria-labelledby="nav-Purchase-tab">
-                                        <form id="PurchaseForm" onsubmit="submitForm(event, 'PurchaseForm', 'nav-Purchase-tab', 'http://88.135.73.131:8003/api/purchase-information/')">
+                                        <form id="PurchaseForm" onsubmit="submitForm(event, 'PurchaseForm', 'nav-Purchase-tab', 'http://192.168.29.17:8004/api/purchase-information/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -176,6 +202,17 @@
                                                     <div class="col-md-4 mb-3">
                                                         <input type="text" class="form-control" name="installation_date" placeholder="Installation Date" onfocus="(this.type = 'date')" required>
                                                     </div>
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
                                                     
                                                 </div>
                                             </div>
@@ -184,7 +221,7 @@
                                     </div>
                                     <!-- Enquiry Details  Tab -->
                                     <div class="tab-pane fade" id="nav-Enquiry" role="tabpanel"  aria-labelledby="nav-Enquiry-tab">
-                                        <form id="EnquiryForm" onsubmit="submitForm(event, 'EnquiryForm', 'nav-Enquiry-tab', 'http://88.135.73.131:8003/api/enquiries/') ">
+                                        <form id="EnquiryForm" onsubmit="submitForm(event, 'EnquiryForm', 'nav-Enquiry-tab', 'http://192.168.29.17:8004/api/enquiries/') ">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -215,7 +252,17 @@
                                                     <div class="col-md-4 mb-3">
                                                         <input type="text" class="form-control" name="enquiry_details" placeholder="Enquiry Details/Description" required>
                                                     </div>
-                                                    
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
                                                     
                                                 </div>
                                             </div>
@@ -224,7 +271,7 @@
                                     </div>
                                     <!-- AMC Information Tab -->
                                     <div class="tab-pane fade" id="nav-AMC" role="tabpanel" aria-labelledby="nav-AMC-tab">
-                                        <form id="AMCInfoForm" onsubmit="submitForm(event, 'AMCInfoForm', 'nav-AMC-tab','http://88.135.73.131:8003/api/amcs/')">
+                                        <form id="AMCInfoForm" onsubmit="submitForm(event, 'AMCInfoForm', 'nav-AMC-tab','http://192.168.29.17:8004/api/amcs/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -268,6 +315,17 @@
                                                     <div class="col-md-4 mb-3">
                                                         <input type="text" class="form-control" name="network_config" placeholder="Network Configuration Details" required>
                                                     </div>
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -275,7 +333,7 @@
                                     </div>
                                     <!-- Other Information Tab -->
                                     <div class="tab-pane fade" id="nav-Other" role="tabpanel" aria-labelledby="nav-Other-tab">
-                                        <form id="OtherInfoForm" onsubmit="submitForm(event, 'OtherInfoForm', 'nav-Other-tab','http://88.135.73.131:8003/api/other-informations/')">
+                                        <form id="OtherInfoForm" onsubmit="submitForm(event, 'OtherInfoForm', 'nav-Other-tab','http://192.168.29.17:8004/api/other-informations/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -302,7 +360,17 @@
                                                     <div class="col-md-4 mb-3" required>
                                                         <input type="text" class="form-control" name="client_feedback" placeholder="Client Feedback/Comments">
                                                     </div>
-                                                    
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -310,7 +378,7 @@
                                     </div>
                                     <!-- Follow Information Tab -->
                                     <div class="tab-pane fade" id="nav-Follow" role="tabpanel" aria-labelledby="nav-Follow-tab">
-                                        <form id="FollowInfoForm" onsubmit="submitForm(event, 'FollowInfoForm', 'nav-Follow-tab','http://88.135.73.131:8003/api/follow-up-actions/')">
+                                        <form id="FollowInfoForm" onsubmit="submitForm(event, 'FollowInfoForm', 'nav-Follow-tab','http://192.168.29.17:8004/api/follow-up-actions/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -332,6 +400,19 @@
                                                     <div class="col-md-4 mb-3">
                                                         <input type="text" class="form-control" name="action_items"placeholder="Action Items" required>
                                                     </div>
+
+
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -339,7 +420,7 @@
                                     </div>
                                     <!-- Account  Tab -->
                                     <div class="tab-pane fade" id="nav-Account" role="tabpanel" aria-labelledby="nav-Account-tab">
-                                        <form id="AccountForm" onsubmit="submitForm(event, 'AccountForm', 'nav-Account-tab','http://88.135.73.131:8003/api/account-managers/')">
+                                        <form id="AccountForm" onsubmit="submitForm(event, 'AccountForm', 'nav-Account-tab','http://192.168.29.17:8004/api/account-managers/')">
                                             <div class="form-group mt-3">
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
@@ -370,6 +451,17 @@
                                                     <div class="col-md-4 mb-3">
                                                         <input type="text" class="form-control" name="end_date" placeholder="End Date " onfocus="(this.type = 'date')" required>
                                                     </div>  
+                                                    <!-- <div class="col-md-4 mb-3">
+                                                        <div class="dropdown-wrapper">
+                                                            <select id="inputState" class="form-control" name="enquiry_choose" required>
+                                                                <option value="" disabled selected>Choose Product</option>
+                                                                <option value="Website">Website</option>
+                                                                <option value="Referral">Referral</option>
+                                                                <option value="Other">Other</option>
+                                                            </select>
+                                                            <span class="dropdown-icon" id="dropdownIcon"></span>
+                                                        </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -1095,41 +1187,40 @@
     console.log("Form Data Submitted:", data); 
 
     fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data), 
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('400 Bad Request'); 
-        }
-        return response.json();
-    })
-    .then(result => {
-        console.log('Success:', result); 
-    }) .then(result => {
-        console.log('Success:', result); 
-
-        alertContainer.innerHTML = `
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Form submitted successfully!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>`;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-         alertContainer.innerHTML = `
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Form submission failed. Please try again.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>`;
-    });
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+})
+.then(response => {
+    if (!response.ok) {
+        return response.json().then(err => {
+            throw new Error(err.message || '400 Bad Request');
+        });
+    }
+    return response.json();
+})
+.then(result => {
+    console.log('Success:', result);
+    alertContainer.innerHTML = `
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Form submitted successfully!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>`;
+})
+.catch(error => {
+    console.error('Error:', error);
+    alertContainer.innerHTML = `
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Form submission failed. ${error.message || 'Please try again.'}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>`;
+});
 
     // Find the index of the current tab and switch to the next one
     const currentIndex = tabIds.indexOf(currentTabId);
@@ -1141,7 +1232,7 @@
 
 // GET request: Fetch client names and populate in the dropdown
 function fetchClients() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; 
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; 
     console.log("Fetching clients...");
     fetch(apiUrl, {
         method: 'GET',
@@ -1154,39 +1245,37 @@ function fetchClients() {
         console.log("Clients Fetched:", data); 
         const clientDropdown = document.getElementById('client_name');
 
+        // Set default option to blank (Client placeholder)
         clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
 
-        // Retrieve the previously selected client ID from localStorage
-        const savedClientId = localStorage.getItem('selectedClientId');
+        // Populate the dropdown with client names
         data.forEach(client => {
             const option = document.createElement('option');
             option.value = client.id; 
-            option.textContent = client.client_name; 
+            option.textContent = client.client_name;
             clientDropdown.appendChild(option);
-
-            // option.selected = true;
-            // console.log("Checking if saved ID matches client:", client.id);
-
-
-            // if (String(client.id) === String(savedClientId)) {
-                
-            //     option.selected = true;
-            // }
-
-            // clientDropdown.appendChild(option);
         });
-        
-        localStorage.removeItem('selectedClientId');
     })
     .catch(error => {
         console.error('Error fetching clients:', error);
     });
 }
 
+// Trigger fetching client details when a client is selected
+document.getElementById('client_name').addEventListener('change', function() {
+    const selectedClientId = this.value;
+    localStorage.setItem('selectedClientId', selectedClientId);
 
+    // Fetch the client-specific data based on the selected ID
+    if (selectedClientId) {
+        fetchClientData(selectedClientId); // Ensure this fetches data for the selected client
+    }
+});
+
+// Fetch server details for the selected client
 function fetchClientData(clientId) {
-    const apiUrl = 'http://88.135.73.131:8003/api/server-details/';
-    
+    const apiUrl = 'http://192.168.29.17:8004/api/server-details/';
+
     fetch(apiUrl, {
         method: 'GET',
         headers: {
@@ -1195,14 +1284,14 @@ function fetchClientData(clientId) {
     })
     .then(response => response.json())
     .then(data => {
-        // Find the server details associated with the selected client
+        // Find server details for the selected client
         const serverDetails = data.find(item => item.client_name === parseInt(clientId));
 
-        // Clear the form fields before populating them
+        // Clear form fields before populating
         clearFormFields();
 
         if (serverDetails) {
-            // Populate the form fields with the found server details
+            // Populate the form fields with the server details
             document.querySelector('input[name="model"]').value = serverDetails.model || '';
             document.querySelector('input[name="operating_system"]').value = serverDetails.operating_system || '';
             document.querySelector('input[name="processor"]').value = serverDetails.processor || '';
@@ -1219,7 +1308,7 @@ function fetchClientData(clientId) {
     });
 }
 
-// Function to clear the form fields
+// Clear the form fields function
 function clearFormFields() {
     document.querySelector('input[name="model"]').value = '';
     document.querySelector('input[name="operating_system"]').value = '';
@@ -1230,29 +1319,20 @@ function clearFormFields() {
     document.querySelector('input[name="network_config_details"]').value = '';
 }
 
-// Save the selected value in localStorage when the dropdown changes
-document.getElementById('client_name').addEventListener('change', function() {
-    const selectedClientId = this.value;
-    localStorage.setItem('selectedClientId', selectedClientId);
-
-    // Fetch client data when a client is selected
-    if (selectedClientId) {
-        fetchClientData(selectedClientId);
-    }
-});
-
+// Call fetchClients() when the ServerDetails tab is clicked/opened
 document.getElementById('nav-Server-tab').addEventListener('click', () => {
     fetchClients();
 });
 
+// Fetch clients once when the page loads
 window.addEventListener('DOMContentLoaded', () => {
-    fetchClients();
+    fetchClients(); // Initial call to populate the dropdown without pre-selecting anything
 });
 
 
 // GET request: PurchaseForm dropdown
 function fetchClientsForPurchase() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; 
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; 
     console.log("Fetching clients...");
     fetch(apiUrl, {
         method: 'GET',
@@ -1268,7 +1348,7 @@ function fetchClientsForPurchase() {
         clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
 
         // Retrieve the previously selected client ID from localStorage
-        const savedClientId = localStorage.getItem('selectedClientId');
+        const savedClientId = localStorage.getItem('selectedClientId_Purchase');
         data.forEach(client => {
             const option = document.createElement('option');
             option.value = client.id; 
@@ -1301,7 +1381,7 @@ function fetchClientsForPurchase() {
 }
 
 function fetchClientPurData(clientId) {
-    const apiUrl = 'http://88.135.73.131:8003/api/purchase-information/';
+    const apiUrl = 'http://192.168.29.17:8004/api/purchase-information/';
     
     fetch(apiUrl, {
         method: 'GET',
@@ -1344,7 +1424,7 @@ function clearFormFields() {
 // Save the selected value in localStorage when the dropdown changes
 document.getElementById('client_name_purchase').addEventListener('change', function() {
     const selectedClientId = this.value;
-    localStorage.setItem('selectedClientId', selectedClientId);
+    localStorage.setItem('selectedClientId_purchase', selectedClientId);
 
     // Fetch client data when a client is selected
     if (selectedClientId) {
@@ -1367,7 +1447,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // GET request: Enquiry
 function fetchClientsForEnquiry() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; 
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; 
     console.log("Fetching clients for Enquiry...");
     fetch(apiUrl, {
         method: 'GET',
@@ -1384,16 +1464,16 @@ function fetchClientsForEnquiry() {
         clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
 
        // Retrieve the previously selected client ID from localStorage
-       const savedClientId = localStorage.getItem('selectedClientId');
+    //    const savedClientId = localStorage.getItem('selectedClientId_Enquiry');
         data.forEach(client => {
             const option = document.createElement('option');
             option.value = client.id; 
             option.textContent = client.client_name; 
 
             clientDropdown.appendChild(option);
-            if (String(client.id) === String(savedClientId)) {
-                option.selected = true;
-            }
+            // if (String(client.id) === String(savedClientId)) {
+            //     option.selected = true;
+            // }
             // console.log("Checking if saved ID matches client:", client.id);
 
         
@@ -1415,7 +1495,7 @@ function fetchClientsForEnquiry() {
 
 
 function fetchClientEnquiryData(clientId) {
-    const apiUrl = 'http://88.135.73.131:8003/api/enquiries/';
+    const apiUrl = 'http://192.168.29.17:8004/api/enquiries/';
     
     fetch(apiUrl, {
         method: 'GET',
@@ -1458,7 +1538,7 @@ document.querySelector('input[name="enquiry_details"]').value = '';
 // Save the selected value in localStorage when the dropdown changes
 document.getElementById('client_name_Enquiry').addEventListener('change', function() {
     const selectedClientId = this.value;
-    localStorage.setItem('selectedClientId', selectedClientId); 
+    localStorage.setItem('selectedClientId_Enquiry', selectedClientId); 
     // Fetch client data when a client is selected
     if (selectedClientId) {
         fetchClientEnquiryData(selectedClientId);
@@ -1476,7 +1556,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // GET request: AMC
 function fetchClientsForAMC() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; console.log("Fetching clients..."); 
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; console.log("Fetching clients..."); 
 
     fetch(apiUrl, {
         method: 'GET',
@@ -1493,16 +1573,16 @@ function fetchClientsForAMC() {
         clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
 
          // Retrieve the previously selected client ID from localStorage
-         const savedClientId = localStorage.getItem('selectedClientId');
+        //  const savedClientId = localStorage.getItem('selectedClientId_AMC');
         data.forEach(client => {
             const option = document.createElement('option');
             option.value = client.id; 
             option.textContent = client.client_name; 
 
             clientDropdown.appendChild(option);
-            if (String(client.id) === String(savedClientId)) {
-                option.selected = true;
-            }
+            // if (String(client.id) === String(savedClientId)) {
+            //     option.selected = true;
+            // }
            
             // console.log("Checking if saved ID matches client:", client.id);
 
@@ -1524,7 +1604,7 @@ function fetchClientsForAMC() {
 }
 
 function fetchClientAMCData(clientId) {
-    const apiUrl = 'http://88.135.73.131:8003/api/amcs/';
+    const apiUrl = 'http://192.168.29.17:8004/api/amcs/';
     
     fetch(apiUrl, {
         method: 'GET',
@@ -1575,7 +1655,7 @@ function clearFormFields() {
 
 document.getElementById('client_name_AMC').addEventListener('change', function() {
     const selectedClientId = this.value;
-    localStorage.setItem('selectedClientId', selectedClientId); 
+    localStorage.setItem('selectedClientId_AMC', selectedClientId); 
 
     if (selectedClientId) {
         fetchClientAMCData(selectedClientId);
@@ -1592,7 +1672,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // GET request: Other
 function fetchClientsForOther() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/';  console.log("Fetching clients...");
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/';  console.log("Fetching clients...");
 
     fetch(apiUrl, {
         method: 'GET',
@@ -1607,16 +1687,16 @@ function fetchClientsForOther() {
 
         clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
 
-       const savedClientId = localStorage.getItem('selectedClientId');
+    //    const savedClientId = localStorage.getItem('selectedClientId_Other');
         data.forEach(client => {
             const option = document.createElement('option');
             option.value = client.id; 
             option.textContent = client.client_name; 
 
             clientDropdown.appendChild(option);
-            if (String(client.id) === String(savedClientId)) {
-                option.selected = true;
-            }
+            // if (String(client.id) === String(savedClientId)) {
+            //     option.selected = true;
+            // }
            
             // console.log("Checking if saved ID matches client:", client.id);
 
@@ -1638,7 +1718,7 @@ function fetchClientsForOther() {
 }
 
 function fetchClientOtherData(clientId) {
-    const apiUrl = 'http://88.135.73.131:8003/api/other-informations/';
+    const apiUrl = 'http://192.168.29.17:8004/api/other-informations/';
     
     fetch(apiUrl, {
         method: 'GET',
@@ -1682,7 +1762,7 @@ function clearFormFields() {
 
 document.getElementById('client_name_Other').addEventListener('change', function() {
     const selectedClientId = this.value;
-    localStorage.setItem('selectedClientId', selectedClientId); 
+    localStorage.setItem('selectedClientId_Other', selectedClientId); 
        // Fetch client data when a client is selected
        if (selectedClientId) {
         fetchClientOtherData(selectedClientId);
@@ -1698,7 +1778,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // GET request: Follow
 function fetchClientsForFollow() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/';console.log("Fetching clients...");
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/';console.log("Fetching clients...");
 
     fetch(apiUrl, {
         method: 'GET',
@@ -1715,16 +1795,16 @@ function fetchClientsForFollow() {
         clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
 
           // Retrieve the previously selected client ID from localStorage
-          const savedClientId = localStorage.getItem('selectedClientId');
+        //   const savedClientId = localStorage.getItem('selectedClientId_Follow');
         data.forEach(client => {
             const option = document.createElement('option');
             option.value = client.id; 
             option.textContent = client.client_name; 
 
             clientDropdown.appendChild(option);
-            if (String(client.id) === String(savedClientId)) {
-                option.selected = true;
-            }
+            // if (String(client.id) === String(savedClientId)) {
+            //     option.selected = true;
+            // }
         
             // console.log("Checking if saved ID matches client:", client.id);
 
@@ -1746,7 +1826,7 @@ function fetchClientsForFollow() {
 }
 
 function fetchClientFollowData(clientId) {
-    const apiUrl ='http://88.135.73.131:8003/api/follow-up-actions/';
+    const apiUrl ='http://192.168.29.17:8004/api/follow-up-actions/';
     
     fetch(apiUrl, {
         method: 'GET',
@@ -1784,7 +1864,7 @@ function clearFormFields() {
 
 document.getElementById('client_name_Follow').addEventListener('change', function() {
     const selectedClientId = this.value;
-    localStorage.setItem('selectedClientId', selectedClientId); 
+    localStorage.setItem('selectedClientId_Follow', selectedClientId); 
       
       if (selectedClientId) {
         fetchClientFollowData(selectedClientId);
@@ -1801,7 +1881,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // GET request: Account
 function fetchClientsForAccount() {
-    const apiUrl = 'http://88.135.73.131:8003/api/clients/'; 
+    const apiUrl = 'http://192.168.29.17:8004/api/clients/'; 
     console.log("Fetching clients...");
 
     fetch(apiUrl, {
@@ -1819,7 +1899,7 @@ function fetchClientsForAccount() {
                 clientDropdown.innerHTML = '<option value="" disabled selected>Client</option>';
 
               // Retrieve the previously selected client ID from localStorage
-        const savedClientId = localStorage.getItem('selectedClientId');
+            //   const savedClientId = localStorage.getItem('selectedClientId_Account');
         data.forEach(client => {
             const option = document.createElement('option');
             option.value = client.id; 
@@ -1827,9 +1907,9 @@ function fetchClientsForAccount() {
 
             
             clientDropdown.appendChild(option);
-            if (String(client.id) === String(savedClientId)) {
-                option.selected = true;
-            }
+            // if (String(client.id) === String(savedClientId)) {
+            //     option.selected = true;
+            // }
             // console.log("Checking if saved ID matches client:", client.id);
 
             // If this option matches the saved client ID, mark it as selected
@@ -1850,7 +1930,7 @@ function fetchClientsForAccount() {
     }
 
     function fetchClientAccountData(clientId) {
-    const apiUrl = 'http://88.135.73.131:8003/api/account-managers/';
+    const apiUrl = 'http://192.168.29.17:8004/api/account-managers/';
     
     fetch(apiUrl, {
         method: 'GET',
@@ -1896,7 +1976,7 @@ function clearFormFields() {
 }
 document.getElementById('client_name_Account').addEventListener('change', function() {
     const selectedClientId = this.value;
-    localStorage.setItem('selectedClientId', selectedClientId);
+    localStorage.setItem('selectedClientId_Account', selectedClientId);
     
      if (selectedClientId) {
         fetchClientAccountData(selectedClientId);

@@ -81,6 +81,19 @@
 .modal-header, .modal-body, .modal-footer {
   padding: 20px;
 }
+/* 
+.fixed-button {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 4px 9px;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+} */
 
 .fixed-button {
   position: fixed;
@@ -93,8 +106,16 @@
   padding: 4px 9px;
   border-radius: 5px 0 0 5px;
   cursor: pointer;
+  width: 57px;
+  height: 40px;
 }
-
+.fixed-button:hover {
+  background-color: #0056b3; /* Change to a darker blue */
+  transform: translateY(-50%) scale(1.05); /* Slightly enlarge on hover */
+}
+.fixed-button:active {
+  transform: translateY(-70%) scale(1.1); /* Zoom in when clicked */
+}
 .mdi {
   font-size: 18px;
 }
